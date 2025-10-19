@@ -18,7 +18,7 @@ set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 set(USE_ROM_SIZE STM32F10X_HD)
 
 # project settings
-project(led_test C CXX ASM)
+project(led_lrz C CXX ASM)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 11)
 
@@ -84,7 +84,7 @@ message(STATUS >>> ${USE_ROM_SIZE})
 
 list(APPEND SOURCES "")
 
-set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103RCTX_FLASH.ld)
+set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103XX_FLASH.ld)
 
 add_link_options(-specs=nano.specs -specs=nosys.specs -u _printf_float)
 add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map)
